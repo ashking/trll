@@ -82,16 +82,7 @@
             var that = this;
             bootbox.prompt("Editing Board Title", function(result) {
                 if (result === null || result.length == 0) {
-                    if(result.length == 0){
-                        bootbox.alert("Hmm.. Cannot be empty!!", function() {
-                            return false;
-                        });
-                    }
-                    else{
-                        bootbox.alert("Nothing updated!!", function() {
-                            return false;
-                        });   
-                    }
+                    return false;
                 } else {
                     that.model.set({boardName: result});
                     that.model.save({boardName: result});
@@ -225,16 +216,7 @@
             var that = this;
             bootbox.prompt("Editing List Title", function(result) {
                 if (result === null || result.length == 0) {
-                    if(result.length == 0){
-                        bootbox.alert("Hmm.. Cannot be empty!!", function() {
-                            return false;
-                        });
-                    }
-                    else{
-                        bootbox.alert("Nothing updated!!", function() {
-                            return false;
-                        });   
-                    }
+                    return false;
                 } else {
                     that.model.set({listName: result});
                     that.model.save({listName: result});
@@ -368,16 +350,7 @@
             var that = this;
             bootbox.prompt("Editing Card Title", function(result) {
                 if (result === null || result.length == 0) {
-                    if(result.length == 0){
-                        bootbox.alert("Hmm.. Cannot be empty!!", function() {
-                            return false;
-                        });
-                    }
-                    else{
-                        bootbox.alert("Nothing updated!!", function() {
-                            return false;
-                        });   
-                    }
+                    return false;
                 } else {
                     that.model.set({cardName: result});
                     that.model.save({cardName: result});
