@@ -5,19 +5,21 @@ $(function(){
     //toggle forms
     $('.addbroad #CreateBoard').click(function(){
         $('.addboardform').toggle();
+        $(".form-control").focus();
         return false;
     });
 
     $('.addlist #CreateList').click(function(){
         $('.addlistform').toggle();
+        $(".form-control").focus();
         return false;
     });
 
     $('.addcard').click(function(){
         $('.addcardform').toggle();
+        $(".form-control").focus();
         return false;
     });
-
 
     $('.addbroad #ClearData').click(function(){
         bootbox.confirm("Are you sure?", function(result) {
@@ -26,12 +28,6 @@ $(function(){
                 location.reload();
             }
         }); 
-    });
-
-    $(document).on("click", ".alert", function(e) {
-        bootbox.alert("Hello world!", function() {
-            console.log("Alert Callback");
-        });
     });
 
 });

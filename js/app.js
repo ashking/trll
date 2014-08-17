@@ -141,15 +141,21 @@
         submit: function(e){
             e.preventDefault(); //prevent form submit
             var newBoard = $(e.currentTarget).find('input[type=text]').val();
-            var isexists = this.collection.where({ boardName: newBoard}).length?true:false;
-            if(!isexists){
-                var newBoardModel = new App.Models.Board({ boardName: newBoard});
-                this.collection.add(newBoardModel);
-                this.collection.invoke('save');
+            if(newBoard.length == 0){
                 $(e.currentTarget).parent().toggle();   
             }
             else {
-                $(e.currentTarget).parent().toggle();   
+                var isexists = this.collection.where({ boardName: newBoard}).length?true:false;
+                if(!isexists){
+                    var newBoardModel = new App.Models.Board({ boardName: newBoard});
+                    this.collection.add(newBoardModel);
+                    this.collection.invoke('save');
+                    $('.addboardform').hide();   
+
+                }
+                else {
+                    $(e.currentTarget).parent().toggle();   
+                }
             }
         }
     });
@@ -285,7 +291,8 @@
                 var newListModel = new App.Models.List({ boardName: window.location.hash.split("#")[1], listName: newList});
                 this.collection.add(newListModel);
                 this.collection.invoke('save');
-                $(e.currentTarget).parent().toggle();   
+                //$(e.currentTarget).parent().toggle();   
+                $('.addlistform').hide(); 
             }
             else {
                 $(e.currentTarget).parent().toggle();   
@@ -432,7 +439,8 @@
                 var newCardModel = new App.Models.Card({ boardName: str[0], listName: newList, cardName:newCard});
                 this.collection.add(newCardModel);
                 this.collection.invoke('save');
-                $(e.currentTarget).parent().toggle();   
+                //$(e.currentTarget).parent().toggle();   
+                $('.addcardform').hide(); 
             }
             else {
                 $(e.currentTarget).parent().toggle();   
