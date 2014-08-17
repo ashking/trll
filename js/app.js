@@ -132,6 +132,7 @@
         submit: function(e){
             e.preventDefault(); //prevent form submit
             var newBoard = $(e.currentTarget).find('input[type=text]').val();
+            $(e.currentTarget).find('input[type=text]').val('');
             if(newBoard.length == 0){
                 $(e.currentTarget).parent().toggle();   
             }
@@ -268,6 +269,7 @@
         submit: function(e){
             e.preventDefault();
             var newList = $(e.currentTarget).find('input[type=text]').val();
+            $(e.currentTarget).find('input[type=text]').val();
             var isexists = this.collection.where({ listName: newList}).length?true:false;
             if(!isexists){
                 var newListModel = new App.Models.List({ boardName: window.location.hash.split("#")[1], listName: newList});
@@ -404,6 +406,7 @@
         submit: function(e){
             e.preventDefault();
             var newCard = $(e.currentTarget).find('input[type=text]').val();
+            $(e.currentTarget).find('input[type=text]').val();
             var newList = $( ".listpicker option:selected" ).text();
             var isexists = this.collection.where({ cardName: newCard}).length?true:false;
             if(!isexists){
