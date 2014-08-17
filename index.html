@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+              <div class="col-md-8">
+                <a href="#"><h1>Trello</h1></a>
+              </div>
+              <div class="col-md-4">
+                <div class="addbroad">
+                    <button type="button" id="CreateBoard" class="btn btn-info">Create Board</button>
+                    <button type="button" id="ClearData" class="btn btn-link">Clear All Data</button>
+                </div>
+                <div class="addlist">
+                    <button type="button" id="CreateList" class="btn btn-info">Create List</button>
+                    
+                </div>
+                <div class="addcard">
+                    <button type="button" class="btn btn-info">New Card</button>
+                </div>
+                <div class="addboardform">
+                    <form  class="form-inline" role="form" id="NewBoard"> 
+                        <input class="form-control" type="text" name="name" placeholder="Untitled Board">
+                        <input class="btn btn-primary" type="submit" value="Create">
+                    </form> 
+                </div>
+                <div class="addlistform">
+                    <form  class="form-inline" role="form" id="NewList"> 
+                        <input class="form-control" type="text" name="name" placeholder="Untitled List">
+                        <input class="btn btn-primary" type="submit" value="Create">
+                    </form> 
+                </div>
+                <div class="addcardform" style="display: block;">
+                    <form class="form-inline" role="form" id="NewCard"> 
+                        <input class="form-control" type="text" name="name" placeholder="Untitled Card">
+                        <select class="form-control listpicker">
+                        </select>
+                        <input class="btn btn-success" type="submit" value="Create">
+                    </form> 
+                </div>
+              </div>
+            </div>
+            <ol class="breadcrumb">
+              </ol>
+            <div class="page">
+                <script id="BoardTemplate" type="text/template">
+                    <a class="bg-primary" href=<%= "#"+encodeURI(boardName)%>>
+                        <span><%= boardName %> </span>
+                    </a>
+
+                    <button type="button" class="DeleteBoard board-btn btn btn-link">Delete</button>
+                    <button type="button" class="EditBoard board-btn-edit btn btn-link">Edit</button>
+                                            
+                </script>
+
+                <script id="ListTemplate" type="text/template">
+                    <a class="bg-primary" href=<%= "#"+encodeURI(boardName) + "/" +encodeURI(listName)%>
+                        <span><%= listName%></span>
+                    </a>
+                    <button type="button" class="DeleteList board-btn btn btn-link">Delete</button>
+                    <button type="button" class="EditList board-btn-edit btn btn-link">Edit</button>
+                    
+                    
+                    </div>  
+                </script>
+                <script id="CardTemplate" type="text/template">
+                    <div class="bg-primary"><%= cardName%></div>
+                    <button type="button" class="DeleteCard board-btn btn btn-link">Delete</button>
+                    <button type="button" class="EditCard board-btn-edit btn btn-link">Edit</button>
+                </script>
+            </div>
+        </div>
+
+
+
+        <script src="lib/underscore.js"></script>
+        <script src="lib/jquery-2.1.1.js"></script>
+        <script src="lib/backbone.js"></script>
+        <script src="lib/backbone.localStorage.js"></script>
+        <script src="lib/bootstrap.js"></script>
+        <script src="lib/bootbox.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/control.js"></script>
+    </body>
+</html>

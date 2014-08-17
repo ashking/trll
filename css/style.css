@@ -1,0 +1,121 @@
+
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.addbroad, .addlist, .addcard{
+    position: relative;
+    top: 18px;
+    font-size: 22px;
+    margin-right: 20px;
+    right: 0;
+    float: right;
+}
+
+.addbroad:hover, .addlist:hover, .addcard:hover{
+    cursor: pointer;
+}
+
+
+
+.addboardform, .addlistform, .addcardform{
+    position: absolute;
+    top: 60px;
+    font-size: 18px;
+    border: 1px solid;
+    padding: 5px;
+    margin-right: 20px;
+    right: 0;
+    display: none;
+    background-color: #f6f6f6;
+}
+
+ul{
+    list-style:none;
+}
+
+.page li{
+    float: left;
+    width: 28.5%;
+}
+
+.page a, .page div.bg-primary{
+    height: 90px;
+    margin: 0 16px 16px 0;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: none;
+    
+    border-radius: 3px;
+    display: block;
+    font-weight: 700;
+    padding: 8px 12px 8px 12px;
+    color: #f6f6f6;
+
+}
+
+.page a:hover{
+    color: #f6f6f6;
+}
+
+.alert{
+    display: none;
+}
+
+.createcard{
+    margin-top: 5px;
+}
+
+
+.addcardform{
+    display: none;
+}
+
+.cards-view {
+    min-height: 20px;
+}
+
+
+.edit-input {
+    display:none;
+    top: -100px;
+    position: relative;
+    width: 92%
+}
+.edit{
+    top: -75px;
+    position: relative;
+    
+
+}
+
+.delete{
+    top: -85px;
+    position: relative;
+    left: 275px;
+
+}
+
+
+.board-btn{
+    position: relative;
+    top: -55px;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+
+.board-btn:hover, .board-btn-e:hover{
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.board-btn-edit{
+    position: relative;
+    top: -55px;
+    color: #fefefe;
+    text-decoration: none;
+    left: 175px;
+}
