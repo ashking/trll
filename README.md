@@ -1,4 +1,4 @@
-TRLL: A TReLLo clone 
+[TRLL]: A TReLLo clone 
 =========
 ###A single user model and data on [localStorage]
 
@@ -19,4 +19,4 @@ Uses:
 [Backbone.localStorage]:https://github.com/jeromegn/Backbone.localStorage
 [jQuery]:http://jquery.com/
 [Bootbox]:http://bootboxjs.com/
-
+[TRLL]:http://ashking.github.io/trll/
